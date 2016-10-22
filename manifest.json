@@ -1,0 +1,32 @@
+{
+    "name": "Mod",
+    "version": "0.0.1",
+    "description": "Test project to work with google chrome extension",
+    "manifest_version": 2,
+    "icons": {
+        "16": "images/icon.png",
+        "48": "images/48.png",
+        "128": "images/128.png"
+    },
+    "omnibox": {
+        "keyword": "yeah"
+    },
+    "homepage_url": "http://yahoo.co.jp/",
+    "background": {
+        "scripts": ["background/background.js"],
+        "persistent": false
+    },
+    "chrome_url_overrides": {
+        "newtab": "newtab/newtab.html"
+    },
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content/content.js","jquery.js"]
+    }],
+    "browser_action": {
+        "default_title": "That's the tool tip",
+        "default_icon": "images/icon.png",
+        "default_popup": "popup/popup.html"
+    },
+    "devtools_page": "devtools/devtools.html"
+}
